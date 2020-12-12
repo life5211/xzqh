@@ -141,7 +141,8 @@
         methods: {
             itemClickFn(item) {
                 this.isPar = item[3];
-                vm[this.field[item[2]]] = item[0];
+                let level = item[2] > 4 ? 5 : item[2];
+                vm[this.field[level]] = item[0];
             },
             getJson: function (code, type) {
                 if (this.isPar < 1) {
