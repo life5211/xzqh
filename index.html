@@ -47,7 +47,7 @@
           <th>名称</th>
         </tr>
         <tr v-for='item in provinces' @click='itemClickFn(item)' :style="province === item[0]?css:''" :key="year+item[0]">
-          <td>{{item[0].substring(0,6)}}</td>
+          <td>{{item[0]/1000000}}</td>
           <td>{{item[1]}}</td>
         </tr>
       </table>
@@ -59,7 +59,7 @@
           <th>名称</th>
         </tr>
         <tr v-for='item in cities' @click='itemClickFn(item)' :style="city===item[0]?css:''" :key="year+item[0]">
-          <td>{{item[0].substring(0,6)}}</td>
+          <td>{{item[0]/1000000}}</td>
           <td>{{item[1]}}</td>
         </tr>
       </table>
@@ -71,7 +71,7 @@
           <th>名称</th>
         </tr>
         <tr v-for='item in counties' @click='itemClickFn(item)' :style="county===item[0]?css:''" :key="year+item[0]">
-          <td>{{item[0].substring(0,6)}}</td>
+          <td>{{item[0]/1000000}}</td>
           <td>{{item[1]}}</td>
         </tr>
       </table>
@@ -83,7 +83,7 @@
           <th>名称</th>
         </tr>
         <tr v-for='item in towns' v-on:click='itemClickFn(item)' :style="town===item[0]?css:''" :key="year+item[0]">
-          <td>{{item[0].substring(0,9)}}</td>
+          <td>{{item[0]/1000}}</td>
           <td>{{item[1]}}</td>
         </tr>
       </table>
@@ -127,7 +127,7 @@
         el: '#xzqh',
         data: {
             china: '000000000000', isPar: 1,
-            years: ['2018', '2019'], year: '',
+            years: ['2020', '2019', '2018'], year: '',
             provinces: [], province: '',
             cities: [], city: '',
             counties: [], county: '',
@@ -196,7 +196,7 @@
             }
         },
         created() {
-            this.year = this.years[1];
+            this.year = this.years[0];
         }
     });
 </script>
